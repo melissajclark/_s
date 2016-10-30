@@ -43,7 +43,7 @@ var team                    = 'Melissa Jean Clark <melissa@melissajclark.ca';
 var translatePath           = './languages'
 
 // Style related.
-var styleSRC                = './assets/sass/style.scss'; // Path to main .scss file.
+var styleSRC                = './assets/sass/*.scss'; // Path to main .scss file.
 var styleDestination        = './'; // Path to place the compiled CSS file.
 // Defualt set to root folder.
 

@@ -1,9 +1,19 @@
-// @import "../layout/content-sidebar";
-// @import "../layout/sidebar-content";
 /*--------------------------------------------------------------
-## Posts and pages
+## Site Layout
 --------------------------------------------------------------*/
-@import "primary/posts-and-pages";
+
+body {
+  width:$size__site-main;
+  max-width:$size__site-max;
+  margin:0 auto;
+
+  // flexbox sticky footer
+  display:flex;
+  min-height:100vh;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
 
 /*--------------------------------------------------------------
 ## Comments

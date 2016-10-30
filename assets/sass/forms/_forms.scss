@@ -1,2 +1,12 @@
 @import "buttons";
 @import "fields";
+
+form ul {
+  list-style-type: none;
+  margin:0;
+  padding:0;
+
+  li {
+    margin:1rem 0;
+  }
+}

@@ -24,6 +24,12 @@ textarea {
 	}
 }
 
+input[type="radio"],
+input[type="checkbox"]{
+	margin-right:0.25rem;
+	padding-right:0.25rem;
+}
+
 select {
 	border: 1px solid $color__border-input;
 }
