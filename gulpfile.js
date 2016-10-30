@@ -43,7 +43,7 @@ var team                    = 'Melissa Jean Clark <melissa@melissajclark.ca';
 var translatePath           = './languages'
 
 // Style related.
-var styleSRC                = './assets/scss/style.scss'; // Path to main .scss file.
+var styleSRC                = './assets/sass/style.scss'; // Path to main .scss file.
 var styleDestination        = './'; // Path to place the compiled CSS file.
 // Defualt set to root folder.
 
@@ -64,7 +64,7 @@ var imagesSRC               = './assets/images/raw/**/*.{png,jpg,gif,svg}'; // S
 var imagesDestination       = './assets/images/'; // Destination folder of optimized images. Must be different from the imagesSRC folder.
 
 // Watch files paths.
-var styleWatchFiles         = './assets/scss/**/*.scss'; // Path to all *.scss files inside css folder and inside them.
+var styleWatchFiles         = './assets/sass/**/*.scss'; // Path to all *.scss files inside css folder and inside them.
 var vendorJSWatchFiles      = './assets/js/vendor/*.js'; // Path to all vendor JS files.
 var customJSWatchFiles      = './assets/js/custom/*.js'; // Path to all custom JS files.
 var projectPHPWatchFiles    = './**/*.php'; // Path to all PHP files.
