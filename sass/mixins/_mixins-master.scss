@@ -22,3 +22,43 @@
 @mixin clearfix-after() {
 	clear: both;
 }
+
+// Media Query Breakpoints
+
+@mixin breakpoint($point) {
+
+  $bp-giant:      "(min-width: 1900px)"; // large desktops
+  $bp-huge:       "(min-width: 1600px)";
+  $bp-large:      "(min-width: 1350px)";
+  $bp-medium:     "(min-width: 1150px)";
+  $bp-little:     "(min-width: 850px)";
+  $bp-tiny:       "(min-width: 550px)";
+  $bp-preTiny:    "(max-width: 550px)";
+  $bp-mini:       "(min-width: 350px)";
+
+
+  @if $point == giant {
+    @media #{$bp-giant} { @content; }
+  }
+  @elseif $point == huge {
+    @media #{$bp-huge} { @content; }
+  }
+  @else if $point == large {
+    @media #{$bp-large} { @content; }
+  }
+  @else if $point == medium {
+    @media #{$bp-medium}  { @content; }
+  }
+  @else if $point == little {
+    @media #{$bp-little}  { @content; }
+  }
+  @else if $point == tiny {
+    @media #{$bp-tiny}  { @content; }
+  }
+  @else if $point == preTiny {
+    @media #{$bp-preTiny}  { @content; }
+  }
+  @else if $point == mini {
+    @media #{$bp-mini}  { @content; }
+  }
+}
