@@ -135,7 +135,7 @@ gulp.task( 'browser-sync', function() {
 		// @link http://www.browsersync.io/docs/options/
 
 		// Project URL.
-		proxy: "startertheme.dev",
+		proxy: "wp.dev",
 
 		// `true` Automatically open the browser with BrowserSync live server.
 		// `false` Stop the browser from automatically opening.
