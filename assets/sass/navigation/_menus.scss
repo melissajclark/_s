@@ -10,6 +10,10 @@
 		margin: 0;
 		padding-left: 0;
 
+		a {
+			padding:0 1rem 0 0;
+		}
+
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			background:white;
@@ -42,13 +46,13 @@
 			a:hover,
 			a.focus {
 			}
-		}
+		} // ul ul
 
 		li:hover > ul,
 		li.focus > ul {
 			left: auto;
 		}
-	}
+	} // ul
 
 	li {
 		float: left;
@@ -57,7 +61,7 @@
 		&:hover > a,
 		&.focus > a {
 		}
-	}
+	} // li
 
 	a {
 		display: block;
