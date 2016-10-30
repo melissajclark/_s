@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying posts.
+ * Template part for displaying posts and pages.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
