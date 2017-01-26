@@ -27,3 +27,61 @@
 */
 
 add_filter( 'wpseo_metabox_prio', function() { return 'low';});
+
+/**
+ *
+ * Pages: Add Excerpt Support
+ * https://codex.wordpress.org/Function_Reference/add_post_type_support
+ *
+ */
+
+add_post_type_support('page', 'excerpt');
+
+/**
+ *
+ * Remove the <p> tags around images
+ *
+ */
+
+function _s_filter_ptags_on_images($content){
+    return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+}
+add_filter('the_content', '_s_filter_ptags_on_images');
+
+/**
+ *
+ * Add brand colours to the WP Editor
+ *
+ */
+
+function _s_change_tinymce_colours( $args ) {
+    $custom_colours = '
+        "333333", "Dark grey",
+        "d3d3d3", "Medium grey",
+        "f5f5f5", "Light grey"
+    ';
+     $args['textcolor_map'] = '[' . $custom_colours . ']';
+     return $args;
+}
+add_filter( 'tiny_mce_before_init', '_s_change_tinymce_colours' );
+
+/**
+ *
+ * Enable SVG Support
+ *
+ */
+
+function _s_allow_svg_upload($mimes) {
+	$mimes['svg'] = 'image/svg+xml';
+		return $mimes;
+	}
+add_filter('upload_mimes', '_s_allow_svg_upload');
+
+
+/**
+ *
+ * Set Default image link option to none
+ *
+ */
+
+update_option('image_default_link_type','none');
