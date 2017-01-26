@@ -19,12 +19,12 @@
 			background:white;
 			float: left;
 			position: absolute;
-			top: 1.5em;
-			left: -999em;
+			top: 1.5rem;
+			left: -999rem;
 			z-index: 99999;
 
 			ul {
-				left: -999em;
+				left: -999rem;
 				top: 0;
 			}
 
@@ -81,7 +81,7 @@
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 37.5rem) {
 	.menu-toggle {
 		display: none;
 	}
@@ -95,7 +95,7 @@
 .post-navigation {
 
 	.site-main & {
-		margin: 0 0 1.5em;
+		margin: 0 0 1.5rem;
 		overflow: hidden;
 	}
 
