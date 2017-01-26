@@ -26,7 +26,7 @@
 		endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
+	<section class="entry-content">
 		<?php
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
@@ -39,7 +39,7 @@
 				'after'  => '</div>',
 			) );
 		?>
-	</div><!-- .entry-content -->
+	</section><!-- .entry-content -->
 
 	<?php if ( is_singular('post') ) : ?>
 
@@ -48,5 +48,4 @@
 		</footer><!-- .entry-footer -->
 
 	<?php endif; ?>
-
 </article><!-- #post-## -->
