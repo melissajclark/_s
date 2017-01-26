@@ -25,7 +25,5 @@ img{height:auto;max-width:100%}
 figure{margin:1em 0}
 table{margin:0 0 1.5rem;width:100%}
 a{color:royalblue;text-decoration:none}
-a:visited{color:purple}
 a:hover,a:focus,a:active{color:midnightblue}
-a:focus{outline:thin dotted}
 a:hover,a:active{outline:0}
