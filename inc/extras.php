@@ -85,3 +85,22 @@ add_filter('upload_mimes', '_s_allow_svg_upload');
  */
 
 update_option('image_default_link_type','none');
+
+
+/**
+ * TypeKit Fonts
+ *
+ * https://wptheming.com/2013/02/typekit-code-snippet/
+ */
+
+// function _s_typekit() {
+//     wp_enqueue_script( '_s_typekit', '//use.typekit.net/TYPEKITCODE.js');
+// }
+// add_action( 'wp_enqueue_scripts', '_s_typekit' );
+
+// function _s_typekit_inline() {
+//   if ( wp_script_is( '_s_typekit', 'done' ) ) { // ?>
+<!-- //     <script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
+<?php // }
+// }
+// add_action( 'wp_head', '_s_typekit_inline' );
