@@ -102,7 +102,7 @@ add_action( 'widgets_init', '_s_widgets_init' );
  * Enqueue scripts and styles.
  */
 function _s_scripts() {
-	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
+	wp_enqueue_style( '_s-style', get_template_directory_uri() . '/assets/css/style.css' );
 
 	wp_enqueue_script( 
 		'_s-skip-link-focus-fix', // handle (name)
@@ -141,6 +141,23 @@ function _s_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
+
+/**
+ * Enqueue admin scripts and styles.
+ */
+function _s_wp_admin_styling() {
+    wp_enqueue_style('admin-style', get_template_directory_uri() . '/assets/css/admin-style.css', false);
+}
+add_action('admin_enqueue_scripts', '_s_wp_admin_styling');
+
+/**
+ * Enqueue login page styles
+ */
+
+function _s_wp_login_page_styling() {
+    wp_enqueue_style('admin-style', get_template_directory_uri() . '/assets/css/login-style.css', false);
+}
+add_action('login_enqueue_scripts', '_s_wp_login_page_styling');
 
 /**
  * Implement the Custom Header feature.

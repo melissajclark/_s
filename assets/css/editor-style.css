@@ -1,0 +1,77 @@
+/*=============================================>>>>>
+= Editor Stylesheet =
+===============================================>>>>>*/
+/* This mixin can be used to set the object-fit: @include object-fit(contain); or object-fit and object-position: @include object-fit(cover, top); */
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+body, button, input, select, textarea { color: #404040; font-family: sans-serif; font-size: 16px; font-size: 1rem; line-height: 1.5; word-wrap: break-word; }
+
+h1, h2, h3, h4, h5, h6 { clear: both; }
+
+p { margin-bottom: 1.5rem; }
+
+dfn, cite, em, i { font-style: italic; }
+
+blockquote { margin: 0 1.5rem; }
+
+address { margin: 0 0 1.5rem; }
+
+pre { background: #eee; font-family: "Courier 10 Pitch", Courier, monospace; font-size: 15px; font-size: 0.9375rem; line-height: 1.6; margin-bottom: 1.6rem; max-width: 100%; overflow: auto; padding: 1.6rem; }
+
+code, kbd, tt, var { font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace; font-size: 15px; font-size: 0.9375rem; }
+
+abbr, acronym { border-bottom: 1px dotted #666; cursor: help; }
+
+mark, ins { background: #fff9c0; text-decoration: none; }
+
+big { font-size: 125%; }
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+html { box-sizing: border-box; }
+
+*, *:before, *:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */ box-sizing: inherit; }
+
+body { background: #fff; /* Fallback for when there is no custom background color defined. */ }
+
+blockquote, q { quotes: "" ""; }
+
+blockquote:before, blockquote:after, q:before, q:after { content: ""; }
+
+hr { background-color: #ccc; border: 0; height: 1px; margin-bottom: 1.5rem; }
+
+ul, ol { margin: 0 0 1rem 1rem; -webkit-margin-before: 0; -webkit-margin-after: 0; -webkit-margin-start: 0px; -webkit-margin-end: 0px; -webkit-padding-start: 0; padding: 0 0 0 1.5rem; }
+
+ul { list-style: disc; }
+
+ol { list-style: decimal; }
+
+li > ul, li > ol { margin-bottom: 0; margin-left: 1rem; }
+
+dt { font-weight: bold; }
+
+dd { margin: 0 1.5em 1.5rem; }
+
+img { height: auto; /* Make sure images are scaled correctly. */ max-width: 100%; /* Adhere to container width. */ }
+
+figure { margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */ }
+
+table { margin: 0 0 1.5rem; width: 100%; }
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+a { color: royalblue; text-decoration: none; }
+
+a:hover, a:focus, a:active { color: midnightblue; }
+
+a:hover, a:active { outline: 0; }
+
+/*= End of Editor Stylesheet =*/
+/*=============================================<<<<<*/
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZWRpdG9yLXN0eWxlLmNzcyIsInNvdXJjZXMiOlsiZWRpdG9yLXN0eWxlLnNjc3MiLCJ2YXJpYWJsZXMtc2l0ZS9fdmFyaWFibGVzLXNpdGUuc2NzcyIsIm1peGlucy9fbWl4aW5zLW1hc3Rlci5zY3NzIiwidHlwb2dyYXBoeS9fdHlwb2dyYXBoeS5zY3NzIiwidHlwb2dyYXBoeS9faGVhZGluZ3Muc2NzcyIsInR5cG9ncmFwaHkvX2NvcHkuc2NzcyIsImVsZW1lbnRzL19lbGVtZW50cy5zY3NzIiwiZWxlbWVudHMvX2xpc3RzLnNjc3MiLCJlbGVtZW50cy9fdGFibGVzLnNjc3MiLCJuYXZpZ2F0aW9uL19saW5rcy5zY3NzIl0sIm1hcHBpbmdzIjoiQUFBQTs7c0RBRXNEO0FFbUR0RCxxSkFLRTtBRm5ERjs7Z0VBRWdFO0FHVGhFLEFBQUEsSUFBSSxFQUNKLEFBQUEsTUFBTSxFQUNOLEFBQUEsS0FBSyxFQUNMLEFBQUEsTUFBTSxFQUNOLEFBQUEsUUFBUSxDQUFDLEVBQ1IsS0FBSyxFRjJCYSxPQUFPLEVFMUJ6QixXQUFXLEVGSUMsVUFBVSxFQ1J0QixTQUFTLEVBQUcsSUFBVSxFQUN0QixTQUFTLEVBQUUsSUFBVSxFQ0tyQixXQUFXLEVGS2EsR0FBRyxFRUozQixTQUFTLEVBQUUsVUFBVyxHQUN0Qjs7QUNWRCxBQUFBLEVBQUUsRUFBRSxBQUFBLEVBQUUsRUFBRSxBQUFBLEVBQUUsRUFBRSxBQUFBLEVBQUUsRUFBRSxBQUFBLEVBQUUsRUFBRSxBQUFBLEVBQUUsQ0FBQyxFQUN0QixLQUFLLEVBQUUsSUFBSyxHQUNaOztBQ0ZELEFBQUEsQ0FBQyxDQUFDLEVBQ0QsYUFBYSxFQUFFLE1BQU8sR0FDdEI7O0FBRUQsQUFBQSxHQUFHLEVBQUUsQUFBQSxJQUFJLEVBQUUsQUFBQSxFQUFFLEVBQUUsQUFBQSxDQUFDLENBQUMsRUFDaEIsVUFBVSxFQUFFLE1BQU8sR0FDbkI7O0FBRUQsQUFBQSxVQUFVLENBQUMsRUFDVixNQUFNLEVBQUUsUUFBUyxHQUNqQjs7QUFFRCxBQUFBLE9BQU8sQ0FBQyxFQUNQLE1BQU0sRUFBRSxVQUFXLEdBQ25COztBQUVELEFBQUEsR0FBRyxDQUFDLEVBQ0gsVUFBVSxFSk1hLElBQUksRUlMM0IsV0FBVyxFSk5BLGtCQUFrQixFQUFFLE9BQU8sRUFBRSxTQUFTLEVDVmpELFNBQVMsRUFBRyxJQUFVLEVBQ3RCLFNBQVMsRUFBRSxTQUFVLEVHaUJyQixXQUFXLEVKTlksR0FBRyxFSU8xQixhQUFhLEVBQUUsTUFBTyxFQUN0QixTQUFTLEVBQUUsSUFBSyxFQUNoQixRQUFRLEVBQUUsSUFBSyxFQUNmLE9BQU8sRUFBRSxNQUFPLEdBQ2hCOztBQUVELEFBQUEsSUFBSSxFQUFFLEFBQUEsR0FBRyxFQUFFLEFBQUEsRUFBRSxFQUFFLEFBQUEsR0FBRyxDQUFDLEVBQ2xCLFdBQVcsRUpqQkMsTUFBTSxFQUFFLFFBQVEsRUFBRSxhQUFhLEVBQUUsa0JBQWtCLEVBQUUsU0FBUyxFQ1QxRSxTQUFTLEVBQUcsSUFBVSxFQUN0QixTQUFTLEVBQUUsU0FBVSxHRzJCckI7O0FBRUQsQUFBQSxJQUFJLEVBQUUsQUFBQSxPQUFPLENBQUMsRUFDYixhQUFhLEVBQUUsR0FBRyxDQUFDLE1BQU0sQ0pLTCxJQUFJLEVJSnhCLE1BQU0sRUFBRSxJQUFLLEdBQ2I7O0FBRUQsQUFBQSxJQUFJLEVBQUUsQUFBQSxHQUFHLENBQUMsRUFDVCxVQUFVLEVKZGEsT0FBTyxFSWU5QixlQUFlLEVBQUUsSUFBSyxHQUN0Qjs7QUFFRCxBQUFBLEdBQUcsQ0FBQyxFQUNILFNBQVMsRUFBRSxJQUFLLEdBQ2hCOztBTGhDRDs7Z0VBRWdFO0FNZGhFLEFBQUEsSUFBSSxDQUFDLEVBQ0osVUFBVSxFQUFFLFVBQVcsR0FDdkI7O0FBRUQsQUFBQSxDQUFDLEVBQ0QsQUFBQyxDQUFBLEFBQUEsT0FBTyxFQUNSLEFBQUMsQ0FBQSxBQUFBLE1BQU0sQ0FBQyxFQUFFLHNNQUFzTSxDQUMvTSxVQUFVLEVBQUUsT0FBUSxHQUNwQjs7QUFFRCxBQUFBLElBQUksQ0FBQyxFQUNKLFVBQVUsRUxRYyxJQUFJLEVLUlMsb0VBQW9FLEVBQ3pHOztBQUVELEFBQUEsVUFBVSxFQUFFLEFBQUEsQ0FBQyxDQUFDLEVBQ2IsTUFBTSxFQUFFLEtBQU0sR0FNZDs7QUFQRCxBQUFBLFVBQVUsQUFHUixPQUFPLEVBSFQsQUFBQSxVQUFVLEFBSVIsTUFBTSxFQUpJLEFBQUEsQ0FBQyxBQUdYLE9BQU8sRUFIRyxBQUFBLENBQUMsQUFJWCxNQUFNLENBQUMsRUFDUCxPQUFPLEVBQUUsRUFBRyxHQUNaOztBQUdGLEFBQUEsRUFBRSxDQUFDLEVBQ0YsZ0JBQWdCLEVMSE0sSUFBSSxFS0kxQixNQUFNLEVBQUUsQ0FBRSxFQUNWLE1BQU0sRUFBRSxHQUFJLEVBQ1osYUFBYSxFQUFFLE1BQU8sR0FDdEI7O0FDNUJELEFBQUEsRUFBRSxFQUFFLEFBQUEsRUFBRSxDQUFDLEVBQ04sTUFBTSxFQUFFLGFBQWMsRUFDdEIscUJBQXFCLEVBQUUsQ0FBRSxFQUN6QixvQkFBb0IsRUFBRSxDQUFFLEVBQ3hCLG9CQUFvQixFQUFFLEdBQUksRUFDMUIsa0JBQWtCLEVBQUUsR0FBSSxFQUN4QixxQkFBcUIsRUFBRSxDQUFFLEVBQ3pCLE9BQU8sRUFBQyxZQUFhLEdBQ3JCOztBQUVELEFBQUEsRUFBRSxDQUFDLEVBQ0YsVUFBVSxFQUFFLElBQUssR0FDakI7O0FBRUQsQUFBQSxFQUFFLENBQUMsRUFDRixVQUFVLEVBQUUsT0FBUSxHQUNwQjs7QUFFRCxBQUFLLEVBQUgsR0FBRyxFQUFFLEVBQ1AsQUFBSyxFQUFILEdBQUcsRUFBRSxDQUFDLEVBQ1AsYUFBYSxFQUFFLENBQUUsRUFDakIsV0FBVyxFQUFFLElBQUssR0FDbEI7O0FBRUQsQUFBQSxFQUFFLENBQUMsRUFDRixXQUFXLEVBQUUsSUFBSyxHQUNsQjs7QUFFRCxBQUFBLEVBQUUsQ0FBQyxFQUNGLE1BQU0sRUFBRSxjQUFlLEdBQ3ZCOztBREVELEFBQUEsR0FBRyxDQUFDLEVBQ0gsTUFBTSxFQUFFLElBQUssRUFBRSw0Q0FBNEMsQ0FDM0QsU0FBUyxFQUFFLElBQUssRUFBRSxnQ0FBZ0MsRUFDbEQ7O0FBRUQsQUFBQSxNQUFNLENBQUMsRUFDTixNQUFNLEVBQUUsS0FBTSxFQUFFLDJFQUEyRSxFQUMzRjs7QUV2Q0QsQUFBQSxLQUFLLENBQUMsRUFDTCxNQUFNLEVBQUUsVUFBVyxFQUNuQixLQUFLLEVBQUUsSUFBSyxHQUNaOztBUmNEOztnRUFFZ0U7QVNuQmhFLEFBQUEsQ0FBQyxDQUFDLEVBQ0QsS0FBSyxFUjRCUSxTQUFTLEVRM0J0QixlQUFlLEVBQUMsSUFBSyxHQVdyQjs7QUFiRCxBQUFBLENBQUMsQUFJQyxNQUFNLEVBSlIsQUFBQSxDQUFDLEFBS0MsTUFBTSxFQUxSLEFBQUEsQ0FBQyxBQU1DLE9BQU8sQ0FBQyxFQUNSLEtBQUssRVJ3QmEsWUFBWSxHUXZCOUI7O0FBUkYsQUFBQSxDQUFDLEFBU0MsTUFBTSxFQVRSLEFBQUEsQ0FBQyxBQVVDLE9BQU8sQ0FBQyxFQUNSLE9BQU8sRUFBRSxDQUFFLEdBQ1g7O0FUVUYsZ0NBQWdDO0FBQ2hDLHNEQUFzRCIsIm5hbWVzIjpbXX0= */
+
+/*# sourceMappingURL=editor-style.css.map */

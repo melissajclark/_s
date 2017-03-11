@@ -44,7 +44,7 @@ var translatePath           = './languages'
 
 // Style related.
 var styleSRC                = './assets/sass/*.scss'; // Path to main .scss file.
-var styleDestination        = './'; // Path to place the compiled CSS file.
+var styleDestination        = './assets/css/'; // Path to place the compiled CSS file.
 // Defualt set to root folder.
 
 // JS Vendor related.
@@ -171,10 +171,10 @@ gulp.task( 'browser-sync', function() {
  		.pipe( sourcemaps.init() )
  		.pipe( sass( {
  			errLogToConsole: true,
- 			// outputStyle: 'compact',
+ 			outputStyle: 'compact',
  			//outputStyle: 'compressed',
  			// outputStyle: 'nested',
- 			outputStyle: 'expanded',
+ 			// outputStyle: 'expanded',
  			precision: 10
  		} ) )
  		.on('error', console.error.bind(console))
@@ -182,7 +182,7 @@ gulp.task( 'browser-sync', function() {
  		.pipe( sourcemaps.init( { loadMaps: true } ) )
  		.pipe( autoprefixer( AUTOPREFIXER_BROWSERS ) )
 
- 		.pipe( sourcemaps.write ( styleDestination ) )
+ 		.pipe( sourcemaps.write ( './' ) )
  		.pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
  		.pipe( gulp.dest( styleDestination ) )
 

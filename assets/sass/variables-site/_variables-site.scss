@@ -3,6 +3,7 @@
 $size__site-main: 95%;
 $size__site-max: 1100px;
 $size__site-sidebar: 25%;
+$size__space: 1.25rem;
 
 
 // Typography
@@ -36,3 +37,8 @@ $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
+
+
+$colour1: $color__text-screen;
+$colour2: $color__link;
+$colour3: $color__text-main;

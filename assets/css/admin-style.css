@@ -1,0 +1,12 @@
+/*=============================================>>>>>
+= Admin Stylesheet =
+===============================================>>>>>*/
+/* This mixin can be used to set the object-fit: @include object-fit(contain); or object-fit and object-position: @include object-fit(cover, top); */
+.wp-admin .acf-image-uploader img { max-height: 350px !important; width: auto; -o-object-fit: contain; object-fit: contain; font-family: "object-fit: contain"; max-width: 100%; }
+
+/*= End of Admin Stylesheet =*/
+/*=============================================<<<<<*/
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYWRtaW4tc3R5bGUuY3NzIiwic291cmNlcyI6WyJhZG1pbi1zdHlsZS5zY3NzIiwidmFyaWFibGVzLXNpdGUvX3ZhcmlhYmxlcy1zaXRlLnNjc3MiLCJtaXhpbnMvX21peGlucy1tYXN0ZXIuc2NzcyJdLCJtYXBwaW5ncyI6IkFBQUE7O3NEQUVzRDtBRW1EdEQscUpBS0U7QUZuREYsQUFDcUIsU0FEWixDQUNSLG1CQUFtQixDQUFDLEdBQUcsQ0FBQyxFQUN2QixVQUFVLEVBQUMsZ0JBQWlCLEVBQzVCLEtBQUssRUFBQyxJQUFLLEVFa0RYLGFBQWEsRUZqRE8sT0FBTyxFRWtEeEIsVUFBVSxFRmxETyxPQUFPLEVFd0R6QixXQUFXLEVBQUUscUJBQXFCLEVGdkRwQyxTQUFTLEVBQUMsSUFBSyxHQUNmOztBQUlGLCtCQUErQjtBQUMvQixzREFBc0QiLCJuYW1lcyI6W119 */
+
+/*# sourceMappingURL=admin-style.css.map */

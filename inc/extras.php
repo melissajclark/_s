@@ -86,6 +86,19 @@ add_filter('upload_mimes', '_s_allow_svg_upload');
 
 update_option('image_default_link_type','none');
 
+/**
+ *
+ * WordPress Login Page: Home URL
+ *
+ */
+
+if ( ! function_exists( '_s_wp_login_url' ) ) :
+    function _s_wp_login_url() {
+        return home_url();
+    }
+endif; // function_exists
+add_filter( 'login_headerurl', '_s_wp_login_url' );
+
 
 /**
  * TypeKit Fonts

@@ -1,0 +1,65 @@
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "normalize";
+
+/*--------------------------------------------------------------
+## WordPress Login Page
+--------------------------------------------------------------*/
+
+.login,
+.login.wp-core-ui {
+	background:#fffff;
+	
+	// reset all the fonts
+	* {
+		// @include font-size(17 / 16);
+		// font-family: $font__main;
+	}
+	
+	h1 a {
+	    background-image: url('../images/logo.svg');
+		height:80px;
+		width:100%;
+		background-size: 320px 100px;
+		background-repeat: no-repeat;
+		background-position:center left;
+	    padding-bottom: 30px;
+	}
+
+	// email / username fields
+	// form .input, 
+	// .login input[type=text] {
+	// 	display:block;
+	// 	color: $color__text-input;
+	// 	border: 1px solid $color__border-input;
+	// 	padding:($size__space / 2);
+	// 	margin:auto;
+
+	// 	// over-rides for WP settings
+	// 	line-height:inherit;
+	// 	height:auto;
+	// 	float:none;
+	// 	border-radius:0;
+	// 	text-shadow:none;
+	// 	box-shadow:none;
+
+	// 	&:focus {
+	// 		color: $color__text-input-focus;
+	// 	}
+	// }
+
+	// form label {
+	// }
+
+	// button on login form
+	// @import "forms/buttons";
+	#login_error,
+	.message {
+		border-left:($size__space / 5) solid $colour2;
+	}
+
+} // login
