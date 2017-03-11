@@ -21,12 +21,14 @@
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php _s_posted_on(); ?>
+			
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>
 	</header><!-- .entry-header -->
 
 	<section class="entry-content">
+		<?php the_post_thumbnail('medium'); ?>
 		<?php
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
