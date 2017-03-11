@@ -36,15 +36,60 @@ function _s_wp_login_page_styling() {
 }
 add_action('login_enqueue_scripts', '_s_wp_login_page_styling');
 
+/**
+ *
+ * Add Formats drop-down to WP Editor
+ *
+ */
+
+function _s_mce_editor_buttons( $buttons ) {
+    array_unshift( $buttons, 'styleselect' );
+    return $buttons;
+}
+add_filter( 'mce_buttons', '_s_mce_editor_buttons' );
 
 /**
-*
-* Filter Yoast SEO's settings, so it is below custom metaboxes.
-* https://wordpress.org/support/topic/plugin-wordpress-seo-by-yoast-position-seo-meta-box-priority-above-custom-meta-boxes/
-*
-*/
+ *
+ * Populate Formats with custom style options
+ *
+ */
+function _s_mce_before_init( $settings ) {
+    $style_formats = array(
+        array(
+            'title' => 'Button',
+            'selector' => 'a',
+            'classes' => 'button'
+        ),
 
-add_filter( 'wpseo_metabox_prio', function() { return 'low';});
+    );
+    $settings['style_formats'] = json_encode( $style_formats );
+    return $settings;
+}
+add_filter( 'tiny_mce_before_init', '_s_mce_before_init' );
+
+/**
+ *
+ * Always show the second row of buttons
+ *
+ */
+
+function _s_show_toolbar( $args ) {
+    $args['wordpress_adv_hidden'] = false;
+    return $args;
+}
+add_filter( 'tiny_mce_before_init', '_s_show_toolbar' );
+
+
+// remove the toolabr toggle since we're always showing the second row of buttons
+function _s_hide_toolbar_toggle( $buttons ) {
+    $remove = 'wp_adv';
+    $key = array_search( $remove, $buttons );
+    if ( $key ) {
+        unset( $buttons[$key] );
+    }
+    return $buttons;
+}
+add_filter( 'mce_buttons', '_s_hide_toolbar_toggle' );
 
 /**
  *
@@ -117,6 +162,15 @@ if ( ! function_exists( '_s_wp_login_url' ) ) :
 endif; // function_exists
 add_filter( 'login_headerurl', '_s_wp_login_url' );
 
+
+/**
+*
+* Filter Yoast SEO's settings, so it is below custom metaboxes.
+* https://wordpress.org/support/topic/plugin-wordpress-seo-by-yoast-position-seo-meta-box-priority-above-custom-meta-boxes/
+*
+*/
+
+add_filter( 'wpseo_metabox_prio', function() { return 'low';});
 
 /**
  * TypeKit Fonts
