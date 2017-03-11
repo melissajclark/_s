@@ -16,7 +16,7 @@ get_header(); ?>
 		if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', '_s' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1 class="page-title"><?php _s_search_results_message(); ?></h1>
 			</header><!-- .page-header -->
 
 			<?php
@@ -36,7 +36,8 @@ get_header(); ?>
 
 		else :
 
-			get_template_part( 'template-parts/content', 'none' );
+			// Customizer controlled messaging for the search page. See template-tags.php.
+			_s_search_page();
 
 		endif; ?>
 
