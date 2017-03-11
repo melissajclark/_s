@@ -95,6 +95,16 @@ function _s_widgets_init() {
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( '404 Error Page', '_s' ),
+		'id'            => 'sidebar-2',
+		'description'   => esc_html__( 'Add widgets to the 404 Error Page.', '_s' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
 }
 add_action( 'widgets_init', '_s_widgets_init' );
 
@@ -102,7 +112,7 @@ add_action( 'widgets_init', '_s_widgets_init' );
  * Enqueue scripts and styles.
  */
 function _s_scripts() {
-	wp_enqueue_style( '_s-style', get_template_directory_uri() . '/assets/css/style.css' );
+	wp_enqueue_style( '_s-style', get_stylesheet_directory_uri() . '/assets/css/style.css' );
 
 	wp_enqueue_script( 
 		'_s-skip-link-focus-fix', // handle (name)
@@ -151,9 +161,9 @@ function _s_wp_admin_styling() {
 add_action('admin_enqueue_scripts', '_s_wp_admin_styling');
 
 /**
- * Enqueue login page styles
+ * Enqueue login page scripts and styles.
  */
-
+ 
 function _s_wp_login_page_styling() {
     wp_enqueue_style('admin-style', get_template_directory_uri() . '/assets/css/login-style.css', false);
 }
