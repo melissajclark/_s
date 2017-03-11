@@ -153,23 +153,6 @@ function _s_scripts() {
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
 /**
- * Enqueue admin scripts and styles.
- */
-function _s_wp_admin_styling() {
-    wp_enqueue_style('admin-style', get_template_directory_uri() . '/assets/css/admin-style.css', false);
-}
-add_action('admin_enqueue_scripts', '_s_wp_admin_styling');
-
-/**
- * Enqueue login page scripts and styles.
- */
- 
-function _s_wp_login_page_styling() {
-    wp_enqueue_style('admin-style', get_template_directory_uri() . '/assets/css/login-style.css', false);
-}
-add_action('login_enqueue_scripts', '_s_wp_login_page_styling');
-
-/**
  * Implement the Custom Header feature.
  */
 // require get_template_directory() . '/inc/custom-header.php';

@@ -15,9 +15,27 @@
  **/
 
  function _s_add_editor_styles() {
- 	add_editor_style( 'editor-style.css' );
+ 	add_editor_style( './assets/css/editor-style.css' );
  }
  add_action( 'admin_init', '_s_add_editor_styles' );
+
+ /**
+ * Enqueue admin scripts and styles.
+ */
+function _s_wp_admin_styling() {
+    wp_enqueue_style('admin-style', get_template_directory_uri() . '/assets/css/admin-style.css', false);
+}
+add_action('admin_enqueue_scripts', '_s_wp_admin_styling');
+
+/**
+ * Enqueue login page scripts and styles.
+ */
+ 
+function _s_wp_login_page_styling() {
+    wp_enqueue_style('admin-style', get_template_directory_uri() . '/assets/css/login-style.css', false);
+}
+add_action('login_enqueue_scripts', '_s_wp_login_page_styling');
+
 
 /**
 *
