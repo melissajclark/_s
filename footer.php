@@ -14,7 +14,8 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-			<p><?php printf( esc_html__( 'Website by: %1$s by %2$s.', '_s' ), '_s', '<a href="https://melissajclark.ca">Melissa Jean Clark</a>' ); ?></p>
+		<?php _s_social_media_links(); ?>
+		<p><?php printf( esc_html__( 'Website by: %1$s by %2$s.', '_s' ), '_s', '<a href="https://melissajclark.ca">Melissa Jean Clark</a>' ); ?></p>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

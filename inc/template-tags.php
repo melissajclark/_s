@@ -251,3 +251,63 @@ function _s_search_results_message() {
 
  } // _s_search_results_message function
 endif; // function exists
+
+/**
+ *
+ * Global Content: ##Social Media Links 
+ *
+ */
+
+if ( ! function_exists( '_s_social_media_links' ) ) :
+
+function _s_social_media_links() { 
+
+	// Social Profiles URLs
+	$_s_social_media_profile_facebook 		= get_theme_mod('_s_social_media_profile_facebook');
+	$_s_social_media_profile_linkedin 		= get_theme_mod('_s_social_media_profile_linkedin');
+	$_s_social_media_profile_pinterest 		= get_theme_mod('_s_social_media_profile_pinterest');
+
+	// Social Profiles Usernames -> URLs
+	$_s_social_media_profile_twitter 		= get_theme_mod('_s_social_media_profile_twitter'); 
+	$_s_social_media_profile_twitter_url 	= esc_url( 'https://twitter.com/' . $_s_social_media_profile_twitter );
+
+	$_s_social_media_profile_instagram 		= get_theme_mod('_s_social_media_profile_instagram'); 
+	$_s_social_media_profile_instagram_url 	= esc_url( 'https://instagram.com/' . $_s_social_media_profile_instagram ); 
+
+	 echo '<ul class="social-links">';
+
+		if ( $_s_social_media_profile_facebook ) :
+			
+			echo '<li><a href="', esc_url( $_s_social_media_profile_facebook ) , '">', esc_html_e('Facebook', '_s'), '</a>';
+
+		endif;
+
+		if ( $_s_social_media_profile_instagram ) :
+			
+			echo '<li><a href="', $_s_social_media_profile_instagram_url  , '">', esc_html_e('Instagram', '_s'), '</a>';
+
+		endif;
+
+		if ( $_s_social_media_profile_linkedin ) :
+			
+			echo '<li><a href="', esc_url( $_s_social_media_profile_linkedin ) , '">', esc_html_e('LinkedIn', '_s'), '</a>';
+
+		endif;
+
+		if ( $_s_social_media_profile_pinterest ) :
+			
+			echo '<li><a href="', esc_url( $_s_social_media_profile_pinterest ) , '">', esc_html_e('Pinterest', '_s'), '</a>';
+
+		endif;
+
+		if ( $_s_social_media_profile_twitter ) :
+			
+			echo '<li><a href="', $_s_social_media_profile_twitter_url , '">', esc_html_e('Twitter', '_s'), '</a>';
+
+		endif;
+
+	echo '</ul>';
+
+} // social links
+
+endif; // function exists

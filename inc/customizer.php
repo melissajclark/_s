@@ -35,6 +35,142 @@ function _s_customize_sanitize( $input ) {
     return wp_kses_post( force_balance_tags( $input ) );
 }
 
+/**
+ *
+ * Customizer: Social Media
+ *
+ */
+
+function _s_social_media_profiles( $wp_customize ) {
+    
+    $wp_customize->add_section(
+        '_s_social_media_profiles',
+        array(
+            'title'             => __('Social Media', '_s'),
+            'capability'        => 'edit_theme_options',
+            'description'       => __('These social media links will be used throughout the website. <br/><br/> To remove a social profile, delete the URL or username. ', '_s'),
+            'priority'          => 100,
+        )
+    );
+
+    /**
+     * Facebook
+     */
+
+    $wp_customize->add_setting(
+        '_s_social_media_profile_facebook',
+        array(
+            'default' => '',
+            'sanitize_callback' => '_s_customize_sanitize',
+
+        )
+    );
+
+    $wp_customize->add_control(
+        '_s_social_media_profile_facebook',
+        array(
+            'label'         => __('Facebook', '_s'),
+            'description'   => __('Full URL for your Facebook page / profile.', '_s'),
+            'section'       => '_s_social_media_profiles',
+            'type'          => 'url',
+        )
+    );
+
+    /**
+     * Instagram
+     */
+
+    $wp_customize->add_setting(
+        '_s_social_media_profile_instagram',
+        array(
+            'default' => '',
+            'sanitize_callback' => '_s_customize_sanitize',
+
+        )
+    );
+
+    $wp_customize->add_control(
+        '_s_social_media_profile_instagram',
+        array(
+            'label'         => __('Instagram', '_s'),
+            'description'   => __('Username only (no @ symbol)', '_s'),
+            'section'       => '_s_social_media_profiles',
+            'type'          => 'text',
+        )
+    );
+
+    /**
+     * LinkedIn
+     */
+
+    $wp_customize->add_setting(
+        '_s_social_media_profile_linkedin',
+        array(
+            'default' => '',
+            'sanitize_callback' => '_s_customize_sanitize',
+
+        )
+    );
+
+    $wp_customize->add_control(
+        '_s_social_media_profile_linkedin',
+        array(
+            'label'         => __('LinkedIn', '_s'),
+            'description'   => __('Full URL for your LinkedIn page / profile', '_s'),
+            'section'       => '_s_social_media_profiles',
+            'type'          => 'url',
+        )
+    );
+
+    /**
+     * Pinterest
+     */
+
+    $wp_customize->add_setting(
+        '_s_social_media_profile_pinterest',
+        array(
+            'default' => '',
+            'sanitize_callback' => '_s_customize_sanitize',
+
+        )
+    );
+
+    $wp_customize->add_control(
+        '_s_social_media_profile_pinterest',
+        array(
+            'label'         => __('Pinterest', '_s'),
+            'description'   => __('Full URL for your Pinterest page / profile', '_s'),
+            'section'       => '_s_social_media_profiles',
+            'type'          => 'url',
+        )
+    );
+
+
+    /**
+     * Twitter
+     */
+
+    $wp_customize->add_setting(
+        '_s_social_media_profile_twitter',
+        array(
+            'default' => '',
+            'sanitize_callback' => '_s_customize_sanitize',
+
+        )
+    );
+
+    $wp_customize->add_control(
+        '_s_social_media_profile_twitter',
+        array(
+            'label'         => __('Twitter', '_s'),
+            'description'   => __('Username only (no @ symbol)', '_s'),
+            'section'       => '_s_social_media_profiles',
+            'type'          => 'text',
+        )
+    );
+}
+add_action( 'customize_register', '_s_social_media_profiles' );
+
 
 /**
  *
