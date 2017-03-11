@@ -120,3 +120,134 @@ function _s_category_transient_flusher() {
 }
 add_action( 'edit_category', '_s_category_transient_flusher' );
 add_action( 'save_post',     '_s_category_transient_flusher' );
+
+
+/**
+ *
+ * ##404 Page Content
+ *
+ * For the 404 Error Page. Content is editable via the Customizer panel, with fallback content if client does not edit it.
+ *
+ * See 404.php for where it is used. 
+ */
+
+if ( ! function_exists( '_s_404_page' ) ) :
+
+function _s_404_page() { 
+	
+	 $_s_404_headline 		= get_theme_mod('_s_404_headline'); 
+	 $_s_404_subheadline	= get_theme_mod('_s_404_subheadline'); 
+	 $_s_404_message 		= get_theme_mod('_s_404_content'); ?>
+
+	<article class="error-404 not-found">
+		<header class="page-header">
+			<?php if (  $_s_404_headline ) : 
+					
+				echo '<h1 class="page-title">', wp_kses_post(  $_s_404_headline ), '</h1>';
+
+			else :
+
+				echo '<h1 class="page-title">', esc_html_e( 'Not found', '_s_' ), '</h1>';
+
+			endif; ?>
+		</header><!-- .page-header -->
+
+		<section class="page-content">
+			<?php if ( $_s_404_subheadline ) : 
+					
+				echo '<h2>', $_s_404_subheadline, '</h2>';
+
+			endif;
+
+			if ( $_s_404_message ) :
+					
+				echo '<p>', $_s_404_message, '</p>';
+
+			else : 
+
+				echo '<p>', esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', '_s_' ), '</p>';
+
+			endif; ?>
+		</section><!-- .page-content -->
+	</article><!-- .error-404 -->
+
+	<aside id="secondary" class="widget-area" role="complementary">
+		<?php dynamic_sidebar( 'sidebar-2' ); ?>
+	</aside><!-- #secondary -->
+
+<?php } // 404 function
+endif; // function exists
+
+/**
+ *
+ * ##Search Page: No Results
+ *
+ * For the no results search page. Content is editable via the Customizer panel, with fallback content if client does not edit it.
+ */
+
+if ( ! function_exists( '_s_search_page' ) ) :
+
+function _s_search_page() { 
+	
+	 $_s_search_page_headline 		= get_theme_mod('_s_search_page_headline'); 
+	 $_s_search_page_message 		= get_theme_mod('_s_search_page_content'); ?>
+
+	<article class="error-404 not-found">
+		<header class="page-header">
+			<?php if ( $_s_search_page_headline ) : 
+					
+				echo '<h1 class="page-title">' , wp_kses_post( $_s_search_page_headline ) , '</h1>';
+
+			else :
+
+				echo '<h1 class="page-title">' , esc_html_e( 'Not found', '_s_' ) , '</h1>';
+
+			endif; ?>
+		</header><!-- .page-header -->
+
+		<section class="page-content">
+			<?php if ( $_s_search_page_message ) :
+					
+				echo '<p>', $_s_search_page_message, '</p>';
+
+			else : 
+
+				echo '<p>', esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help?', '_s_' ), '</p>';
+
+			endif; ?>
+		</section><!-- .page-content -->
+	</article><!-- .error-404 -->
+
+<?php } // 404 function
+endif; // function exists
+
+
+/**
+ *
+ * ##Search Page: With Results
+ *
+ * Outputs the number of results found and the search term. 
+ * 
+ * See search.php for where it is used. 
+ *
+ */
+
+if ( ! function_exists( '_s_search_results_message' ) ) :
+
+function _s_search_results_message() { 
+	
+	global $wp_query;
+	$_s_search_results = $wp_query->found_posts; 
+
+	if ( $_s_search_results < 1 ) :
+
+		echo $_s_search_results, esc_html_e(' Search result for "'),  get_search_query() . '"';
+
+	elseif ( $_s_search_results > 1 ) :
+
+		echo $_s_search_results, esc_html_e(' Search results for "'),  get_search_query() . '"';
+
+	endif;
+
+ } // _s_search_results_message function
+endif; // function exists
