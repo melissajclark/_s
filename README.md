@@ -1,5 +1,36 @@
 [![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
 
+_s Fork by Melissa Jean Clark
+===
+
+I used to have my [own starter theme](https://github.com/melissajclark/wp-content/tree/master/themes/starter-theme), but switched to using `_s` in 2016. 
+
+I've tweaked `_s` for my workflow and preferences. For example, I set up Customizer fields that I use over and over again, and set up the SASS to automatically generate the `editor-style.css` and `login-style.css` files.
+
+## My fork of `_s` has:
+
+- Customizer fields for (see `inc/customizer.php` and `inc/template-tags.php`):
+    + 404 Page: Headline, subheadline and paragraph text
+    + Search Results Page (nothing found): Headline, subheadline and paragraph text
+    + Social Media - set up for Facebook, LinkedIn, Twitter, Instagram, Pinterest. I tweak these as needed for each project.
+- WordPress Admin tweaks (see `inc/extras.php`):
+    + Set the TinyMCE editor to always show both rows of buttons
+    + Set up the format dropdown to the TinyMCE editor, includes base setup with styles for a `.button` selector
+    + Set the `wp-login.php` logo to link to the website's home page
+    + Set the `wp-login.php` logo to use `/assets/images/logo.svg` instead of the WordPress logo
+    + Set the `image_default_link_type` to `none`
+    + Enabled support for `excerpt` on `pages` post type
+    + Removed the `<p>` tags typically wrapped around images
+- Gulp setup via [WPGulp by Ahmad Awais](https://github.com/ahmadawais/WPGulp):
+    + It automatically compiles by SASS files and launches BrowserSync for local development
+    + Gulp generates the main `style.css` file, and `login-style.css`, `admin-style.css`, `editor-style.css` (these files are enqueued in `inc/extras.php`)
+    + With the SASS maps, regular and minified versions of CSS, there's a lot of CSS files. So, I moved them into `assets/css/`.
+- CSS Object-fit support via [object-fit-images polyfill](https://github.com/bfred-it/object-fit-images)
+    + Includes SASS mixin, see: `assets/sass/mixins/_mixins-master.scss`
+    + JavaScript polyfill for support of object-fit in IE: `assets/js/object-fit-polyfill.js`
+
+Some of the functions in `inc/extras.php` are inspired by my friend Linn's [Function Friday](http://drollic.ca/?s=function+friday) series. Thank you Linn!
+
 _s
 ===
 
