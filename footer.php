@@ -14,8 +14,22 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<?php _s_social_media_links(); ?>
-		<p>&copy; <?php echo date("Y"); ?> <?php bloginfo('name'); ?></p>
+		<?php if ( function_exists( '_s_social_media_links') ) :
+			_s_social_media_links(); 
+		endif; ?>
+
+		<nav id="site-navigation" class="secondary-navigation" role="navigation">
+			<?php wp_nav_menu( 
+				array( 
+					'theme_location' 	=> 'secondary', 
+					'menu_id' 			=> 'secondary-menu',
+					'menu_class' 		=> 'menu',
+					'container'			=> 'ul', 
+				) 
+			); ?>
+		</nav><!-- #site-navigation -->
+
+		<p>&copy; <?php echo date("Y"); ?><?php bloginfo('name'); ?></p>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
