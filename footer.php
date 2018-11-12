@@ -18,7 +18,7 @@
 			_s_social_media_links(); 
 		endif; ?>
 
-		<nav id="site-navigation" class="secondary-navigation" role="navigation">
+		<nav id="site-navigation" class="secondary-navigation">
 			<?php wp_nav_menu( 
 				array( 
 					'theme_location' 	=> 'secondary', 
