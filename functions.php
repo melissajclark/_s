@@ -42,9 +42,10 @@ function _s_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
+	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', '_s' ),
+		'primary' 	=> esc_html__( 'Header', '_s' ),
+		'secondary' => esc_html__( 'Footer', '_s' ),
 	) );
 
 	/*
