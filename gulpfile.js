@@ -30,7 +30,7 @@
  */
 // Project related.
 var project                 = '_s'; // Project Name.
-var projectURL              = 'wp.dev'; // Project URL. Could be something like localhost:8888.
+var projectURL              = 'wp.test'; // Project URL. Could be something like localhost:8888.
 var productURL              = './'; // Theme/Plugin URL. Leave it like it is, since our gulpfile.js lives in the root folder.
 
 // Translation related.
@@ -70,6 +70,7 @@ var customJSWatchFiles      = './assets/js/custom/*.js'; // Path to all custom J
 var projectPHPWatchFiles    = './**/*.php'; // Path to all PHP files.
 
 
+
 // Browsers you care about for autoprefixing.
 // Browserlist https        ://github.com/ai/browserslist
 const AUTOPREFIXER_BROWSERS = [
@@ -86,11 +87,12 @@ const AUTOPREFIXER_BROWSERS = [
     'bb >= 10'
   ];
 
+// STOP Editing Project Variables.
 
 /**
  * Load Plugins.
  *
- * Load gulp plugins and assing them semantic names.
+ * Load gulp plugins and passing them semantic names.
  */
 var gulp         = require('gulp'); // Gulp of-course
 
@@ -115,6 +117,9 @@ var sourcemaps   = require('gulp-sourcemaps'); // Maps code in a compressed file
 var notify       = require('gulp-notify'); // Sends message notification to you
 var browserSync  = require('browser-sync').create(); // Reloads browser and injects CSS. Time-saving synchronised browser testing.
 var reload       = browserSync.reload; // For manual browser reload.
+var wpPot        = require('gulp-wp-pot'); // For generating the .pot file.
+var sort         = require('gulp-sort'); // Recommended to prevent unnecessary changes in pot-file.
+
 
 
 /**
@@ -135,11 +140,11 @@ gulp.task( 'browser-sync', function() {
 		// @link http://www.browsersync.io/docs/options/
 
 		// Project URL.
-		proxy: "wp.dev",
+		proxy: "wp.test",
 
 		// `true` Automatically open the browser with BrowserSync live server.
 		// `false` Stop the browser from automatically opening.
-		open: true,
+		open: "ui",
 
 		// Inject CSS changes.
 		// Commnet it to reload browser for every CSS change.
@@ -171,10 +176,10 @@ gulp.task( 'browser-sync', function() {
  		.pipe( sourcemaps.init() )
  		.pipe( sass( {
  			errLogToConsole: true,
- 			outputStyle: 'compact',
+ 			// outputStyle: 'compact',
  			//outputStyle: 'compressed',
  			// outputStyle: 'nested',
- 			// outputStyle: 'expanded',
+ 			outputStyle: 'expanded',
  			precision: 10
  		} ) )
  		.on('error', console.error.bind(console))
