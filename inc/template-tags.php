@@ -162,7 +162,7 @@ function _s_404_page() {
 		</section><!-- .page-content -->
 	</article><!-- .error-404 -->
 
-	<aside id="secondary" class="widget-area" role="complementary">
+	<aside id="secondary" class="widget-area">
 		<?php dynamic_sidebar( 'sidebar-2' ); ?>
 	</aside><!-- #secondary -->
 

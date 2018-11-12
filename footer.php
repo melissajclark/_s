@@ -13,7 +13,7 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer">
 		<?php if ( function_exists( '_s_social_media_links') ) :
 			_s_social_media_links(); 
 		endif; ?>
