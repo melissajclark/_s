@@ -6,9 +6,14 @@ jQuery(function ($) {
 	 *
 	 */
 	
-	// objectFitImages() 
+	objectFitImages();
 
+	/**
+	 *
+	 * Fitvid all the videos
+	 *
+	 */
 
-	// More theme-specfic code here
-
+	 $("#page").fitVids();
+	
 });

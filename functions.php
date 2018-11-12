@@ -128,7 +128,14 @@ add_action( 'widgets_init', '_s_widgets_init' );
  * Enqueue scripts and styles.
  */
 function _s_scripts() {
-	wp_enqueue_style( '_s-style', get_stylesheet_directory_uri() . '/assets/css/style.css' );
+
+	wp_enqueue_style( 
+	    '_s-style', 
+	    get_stylesheet_directory_uri() . '/assets/css/style.css',
+	    array(),
+	    false
+	    //'###' // version number
+	 );
 
 	wp_enqueue_script( 
 		'_s-skip-link-focus-fix', // handle (name)
@@ -155,9 +162,17 @@ function _s_scripts() {
 	);
 
 	wp_enqueue_script( 
+		'fitvid', // handle (name)
+		get_template_directory_uri() . '/assets/js/fitvid.js', // file location
+		array(), // dependencies
+		null, // version number
+		true // load in footer 
+	);
+
+	wp_enqueue_script( 
 		'theme', // handle (name)
 		get_template_directory_uri() . '/assets/js/theme.js', // file location
-		array('jquery'), // dependencies
+		array('jquery', 'fitvid', 'object-fit-polyfill'), // dependencies
 		null, // version number
 		true // load in footer 
 	);
