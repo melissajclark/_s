@@ -39,4 +39,4 @@ table{border-collapse:collapse;border-spacing:0}
 td,th{padding:0}
 .login,.login.wp-core-ui{background:#fffff}
 .login h1 a,.login.wp-core-ui h1 a{background-image:url("../images/logo.svg");height:80px;width:100%;background-size:320px 100px;background-repeat:no-repeat;background-position:center left;padding-bottom:30px}
-.login #login_error,.login .message,.login.wp-core-ui #login_error,.login.wp-core-ui .message{border-left:.25rem solid royalblue}
+.login #login_error,.login .message,.login.wp-core-ui #login_error,.login.wp-core-ui .message{border-left:.25rem solid red}

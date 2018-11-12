@@ -1,27 +1,14 @@
 a {
-	color: $color__link;
+	color: $colour2;
 	text-decoration:none;
 	
 	&:hover,
 	&:focus,
 	&:active {
-		color: $color__link-hover;
+		color: $colour3;
 	}
 	&:hover,
 	&:active {
 		outline: 0;
-	}
-}
-
-.social-links {
-	display:flex;
-	flex-wrap:wrap;
-	justify-content:space-around;
-	list-style:none;
-	margin:0;
-	padding:0;
-
-	li {
-		flex:1;
 	}
 }
