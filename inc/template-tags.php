@@ -147,7 +147,7 @@ function _s_404_page() {
 
 			else :
 
-				echo '<h1 class="page-title">', esc_html_e( 'Not found', '_s_' ), '</h1>';
+				echo '<h1 class="page-title">', esc_html_e( 'Not found', '_s' ), '</h1>';
 
 			endif; ?>
 		</header><!-- .page-header -->
@@ -165,7 +165,7 @@ function _s_404_page() {
 
 			else : 
 
-				echo '<p>', esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', '_s_' ), '</p>';
+				echo '<p>', esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', '_s' ), '</p>';
 
 			endif; ?>
 		</section><!-- .page-content -->
@@ -200,7 +200,7 @@ function _s_search_page() {
 
 			else :
 
-				echo '<h1 class="page-title">' , esc_html_e( 'Not found', '_s_' ) , '</h1>';
+				echo '<h1 class="page-title">' , esc_html_e( 'Not found', '_s' ) , '</h1>';
 
 			endif; ?>
 		</header><!-- .page-header -->
@@ -212,7 +212,7 @@ function _s_search_page() {
 
 			else : 
 
-				echo '<p>', esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help?', '_s_' ), '</p>';
+				echo '<p>', esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help?', '_s' ), '</p>';
 
 			endif; ?>
 		</section><!-- .page-content -->
@@ -241,11 +241,11 @@ function _s_search_results_message() {
 
 	if ( $_s_search_results < 1 ) :
 
-		echo $_s_search_results, esc_html_e(' Search result for "'),  get_search_query() . '"';
+		echo $_s_search_results, esc_html_e(' Search result for "', '_s'),  get_search_query() . '"';
 
 	elseif ( $_s_search_results > 1 ) :
 
-		echo $_s_search_results, esc_html_e(' Search results for "'),  get_search_query() . '"';
+		echo $_s_search_results, esc_html_e(' Search results for "', '_s'),  get_search_query() . '"';
 
 	endif;
 
