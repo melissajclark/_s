@@ -239,17 +239,17 @@ function _s_search_results_message() {
 	global $wp_query;
 	$_s_search_results = $wp_query->found_posts; 
 
-	if ( $_s_search_results < 1 ) :
+	if ( $_s_search_results <= 1 ) :
 
-		echo $_s_search_results, esc_html_e(' Search result for "', '_s'),  get_search_query() . '"';
+		echo $_s_search_results, esc_html_e(' Search result for &ldquo;', '_s'),  get_search_query() . '&rdquo;';
 
 	elseif ( $_s_search_results > 1 ) :
 
-		echo $_s_search_results, esc_html_e(' Search results for "', '_s'),  get_search_query() . '"';
+		echo $_s_search_results, esc_html_e(' Search results for &ldquo;', '_s'),  get_search_query() . '&rdquo;';
 
 	endif;
 
- } // _s_search_results_message function
+ } // pillarlife_search_results_message function
 endif; // function exists
 
 /**
