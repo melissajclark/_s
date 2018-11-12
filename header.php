@@ -40,7 +40,7 @@
 					'theme_location' 	=> 'primary', 
 					'menu_id' 			=> 'primary-menu',
 					'menu_class' 		=> 'menu',
-					'container'			=> '', 
+					'container'			=> 'ul', 
 				) 
 			); ?>
 		</nav><!-- #site-navigation -->
