@@ -151,6 +151,12 @@ body {
   width: 100vw;
 }
 
+.site-container {
+  max-width: var(--s-container);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -335,6 +341,22 @@ h6 {
 /*--------------------------------------------------------------
 # Blocks
 --------------------------------------------------------------*/
+.has-white-color {
+  color: var(--s-white);
+}
+
+.has-white-background-color {
+  background-color: var(--s-white);
+}
+
+.has-black-color {
+  color: var(--s-black);
+}
+
+.has-black-background-color {
+  background-color: var(--s-black);
+}
+
 .wp-block-group {
   padding: 0;
 }

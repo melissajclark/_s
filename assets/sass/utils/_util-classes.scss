@@ -5,3 +5,9 @@
 .alignfull {
     @include alignfull;
 }
+
+.site-container {
+    max-width:var(--s-container);
+    margin-left:auto;
+    margin-right:auto;
+}
