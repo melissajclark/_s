@@ -29,7 +29,7 @@
 			); ?>
 		</nav><!-- #site-navigation -->
 
-		<p>&copy; <?php echo date("Y"); ?><?php bloginfo('name'); ?></p>
+		<p>&copy; <?php echo esc_html( date("Y") ); ?><?php bloginfo('name'); ?></p>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
