@@ -19,14 +19,16 @@
 		endif; ?>
 
 		<nav id="site-navigation" class="secondary-navigation">
-			<?php wp_nav_menu( 
-				array( 
-					'theme_location' 	=> 'secondary', 
-					'menu_id' 			=> 'secondary-menu',
-					'menu_class' 		=> 'menu',
-					'container'			=> 'ul', 
-				) 
-			); ?>
+			<?php if ( has_nav_menu( 'secondary' ) ) {
+				wp_nav_menu( 
+					array( 
+						'theme_location' 	=> 'secondary', 
+						'menu_id' 			=> 'secondary-menu',
+						'menu_class' 		=> 'secondary-menu menu',
+						'container'			=> 'ul', 
+					) 
+				); 
+			} // primary ?>
 		</nav><!-- #site-navigation -->
 
 		<p>&copy; <?php echo esc_html( date("Y") ); ?> <?php esc_html(  bloginfo('name') ); ?></p>
