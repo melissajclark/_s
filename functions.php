@@ -66,9 +66,6 @@ function _s_setup() {
 		'default-image' => '',
 	) ) );
 
-	// Add theme support for selective refresh for widgets.
-	add_theme_support( 'customize-selective-refresh-widgets' );
-
 	/**
 	 * Add support for core custom logo.
 	 *
@@ -80,6 +77,56 @@ function _s_setup() {
 		'flex-width'  => true,
 		'flex-height' => true,
 	) );
+
+	// Add theme support for selective refresh for widgets.
+	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	/**
+	 *
+	 * Add support for Gutenberg / Block Editor features
+	 *
+	 * @link https://www.billerickson.net/getting-your-theme-ready-for-gutenberg/
+	 * @link https://www.billerickson.net/wordpress-color-palette-button-styling-gutenberg/
+	 * 
+	 */
+	add_theme_support( 'align-wide' );
+
+	// Add support for Block Styles.
+	add_theme_support( 'wp-block-styles' );
+
+	// Add support for editor styles.
+	add_theme_support( 'editor-styles' );
+
+	// Enqueue editor styles.
+	add_editor_style( './assets/css/editor-style.css' );
+
+	// Colour palette
+	add_theme_support( 'editor-color-palette', array(
+
+		array(
+			'name'  => __( 'White', '_s' ),
+			'slug'  => 'white',
+			'color' => '#FFFFFF',
+		),
+		
+		array(
+			'name'  => __( 'Black', '_s' ),
+			'slug'  => 'black',
+			'color' => '#000000',
+		),
+		
+	) ); // custom colour palette
+
+	/**
+	 *
+	 * Disable unwanted Block Editor features
+	 *
+	 */
+	add_theme_support( 'disable-custom-font-sizes' );
+	add_theme_support( 'disable-custom-colors' );
+	add_theme_support( 'disable-custom-gradients' );
+	add_theme_support( 'editor-gradient-presets', array() );
+
 }
 endif;
 add_action( 'after_setup_theme', '_s_setup' );
@@ -153,17 +200,25 @@ function _s_scripts() {
 		true // load in footer 
 	);
 
-	wp_enqueue_script( 
-		'object-fit-polyfill', // handle (name)
-		get_template_directory_uri() . '/assets/js/object-fit-polyfill.js', // file location
-		array(), // dependencies
-		null, // version number
-		true // load in footer 
-	);
+	// wp_enqueue_script( 
+	// 	'object-fit-polyfill', // handle (name)
+	// 	get_template_directory_uri() . '/assets/js/object-fit-polyfill.js', // file location
+	// 	array(), // dependencies
+	// 	null, // version number
+	// 	true // load in footer 
+	// );
 
+	// wp_enqueue_script( 
+	// 	'fitvid', // handle (name)
+	// 	get_template_directory_uri() . '/assets/js/fitvid.js', // file location
+	// 	array(), // dependencies
+	// 	null, // version number
+	// 	true // load in footer 
+	// );
+	
 	wp_enqueue_script( 
-		'fitvid', // handle (name)
-		get_template_directory_uri() . '/assets/js/fitvid.js', // file location
+		'plugins', // handle (name)
+		get_template_directory_uri() . '/assets/js/plugins.js', // file location
 		array(), // dependencies
 		null, // version number
 		true // load in footer 
@@ -172,7 +227,7 @@ function _s_scripts() {
 	wp_enqueue_script( 
 		'theme', // handle (name)
 		get_template_directory_uri() . '/assets/js/theme.js', // file location
-		array('jquery', 'fitvid', 'object-fit-polyfill'), // dependencies
+		array('jquery', 'plugins'), // dependencies
 		null, // version number
 		true // load in footer 
 	);
@@ -184,9 +239,26 @@ function _s_scripts() {
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
 /**
+ * Block editor scripts
+ * @link https://www.billerickson.net/block-styles-in-gutenberg/
+ */
+function _s_blockeditor_scripts() {
+
+	wp_enqueue_script(
+		'_s-editor-js', 
+		get_stylesheet_directory_uri() . '/assets/js/block-editor.js', 
+		array( 'wp-blocks', 'wp-dom', 'jquery'), 
+		filemtime( get_stylesheet_directory() . '/assets/js/block-editor.js' ),
+		true
+	);
+}
+add_action( 'enqueue_block_editor_assets', '_s_blockeditor_scripts' );
+
+
+/**
  * Implement the Custom Header feature.
  */
-// require get_template_directory() . '/inc/custom-header.php';
+require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
