@@ -183,9 +183,9 @@ function _s_customize_404_page( $wp_customize ) {
     $wp_customize->add_section(
         '_s_404_page',
         array(
-            'title'             => __('Error Page Content', '_s'),
+            'title'             => __('Error Page Intro', '_s'),
             'capability'        => 'edit_theme_options',
-            'description'       => __('Edit the content displayed on the website\'s error page. <br/> <br/> Use the <em>404 Error Page Sidebar</em> to add widgets to this page.', '_s'),
+            'description'       => __('Edit the intro content displayed on the website\'s error page.', '_s'),
             'priority'          => 120,
         )
     );
@@ -197,7 +197,7 @@ function _s_customize_404_page( $wp_customize ) {
     $wp_customize->add_setting(
         '_s_404_headline',
         array(
-            'default' => __('Oops!', '_s'),
+            'default' => __('Nothing found', '_s'),
             'sanitize_callback' => '_s_customize_sanitize',
 
         )
@@ -207,32 +207,9 @@ function _s_customize_404_page( $wp_customize ) {
         '_s_404_headline',
         array(
             'label'         => __('Headline', '_s'),
-            'description'   => __('Headline for the 404 Error page.', '_s'),
+            'description'   => esc_html__('Headline for the 404 Error page.', '_s'),
             'section'       => '_s_404_page',
             'type'          => 'text',
-        )
-    );
-
-    /**
-     * Subheading
-     */
-
-    $wp_customize->add_setting(
-        '_s_404_subheadline',
-        array(
-            'default' => __('The page you are looking for Can\'t be found.', '_s'),
-            'sanitize_callback' => '_s_customize_sanitize',
-
-        )
-    );
-
-    $wp_customize->add_control(
-        '_s_404_subheadline',
-        array(
-            'label'         => __('Subheading', '_s'),
-            'description'   => __('Subheading for the 404 Error page.', '_s'),
-            'section'       => '_s_404_page',
-            'type'          => 'textarea',
         )
     );
 
@@ -243,7 +220,7 @@ function _s_customize_404_page( $wp_customize ) {
     $wp_customize->add_setting(
         '_s_404_content',
         array(
-            'default' => __('Try one of the following pages instead:', '_s'),
+            'default' => esc_html__('Try one of the following pages instead:', '_s'),
             'sanitize_callback' => '_s_customize_sanitize',
 
         )
@@ -252,8 +229,8 @@ function _s_customize_404_page( $wp_customize ) {
     $wp_customize->add_control(
         '_s_404_content',
         array(
-            'label'         => __('Message', '_s'),
-            'description'   => __('Displayed below the headline and subheading for the 404 Error page.', '_s'),
+            'label'         => esc_html__('Message', '_s'),
+            'description'   => esc_html__('Displayed below the headline for the 404 Error page.', '_s'),
             'section'       => '_s_404_page',
             'type'          => 'textarea',
         )
@@ -273,9 +250,9 @@ function _s_customize_search_page( $wp_customize ) {
     $wp_customize->add_section(
         '_s_search_page',
         array(
-            'title'             => __('Search Page Content', '_s'),
+            'title'             => esc_html__('No Search Results Intro', '_s'),
             'capability'        => 'edit_theme_options',
-            'description'       => __('Edit the content displayed on the website\'s search page. <br/> <br/> This page is displayed when nothing is found for the user\'s search term.', '_s'),
+            'description'       => __('Edit the intro content displayed on the website\'s no results found page. <br/><br/> This page is displayed when nothing is found for the user\'s search term.', '_s'),
             'priority'          => 120,
         )
     );

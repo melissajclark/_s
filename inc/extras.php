@@ -7,7 +7,6 @@
  * @package _s
  */
 
-
 /**
  * Enqueue login page scripts and styles.
  */
@@ -16,7 +15,6 @@ function _s_wp_login_page_styling() {
     wp_enqueue_style('admin-style', get_template_directory_uri() . '/assets/css/login-style.css', false);
 }
 add_action('login_enqueue_scripts', '_s_wp_login_page_styling');
-
 
 /**
  *
@@ -47,7 +45,6 @@ if ( ! function_exists( '_s_wp_login_url' ) ) :
     }
 endif; // function_exists
 add_filter( 'login_headerurl', '_s_wp_login_url' );
-
 
 /**
 *
