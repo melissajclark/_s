@@ -7,51 +7,45 @@
  * @package _s
  */
 
-if ( ! function_exists( '_s_posted_on' ) ) :
+if ( ! function_exists( '_s_posted_on' ) ) {
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
 	function _s_posted_on() {
-		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+		$_s_time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+			$_s_time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 		}
 
-		$time_string = sprintf( $time_string,
+		$_s_time_string = sprintf( $_s_time_string,
 			esc_attr( get_the_date( DATE_W3C ) ),
 			esc_html( get_the_date() ),
 			esc_attr( get_the_modified_date( DATE_W3C ) ),
 			esc_html( get_the_modified_date() )
 		);
 
-		$posted_on = sprintf(
-			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', '_s' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-		);
-
-		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+		echo '<span class="posted-on">' . $_s_time_string  . '</span>'; 
 
 	}
-endif;
+}
 
-if ( ! function_exists( '_s_posted_by' ) ) :
+if ( ! function_exists( '_s_posted_by' ) ) {
 	/**
 	 * Prints HTML with meta information for the current author.
 	 */
 	function _s_posted_by() {
-		$byline = sprintf(
+		$_s_byline = sprintf(
 			/* translators: %s: post author. */
 			esc_html_x( 'by %s', 'post author', '_s' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
-		echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+		echo '<span class="byline"> ' . $_s_byline . '</span>'; 
 
 	}
-endif;
+}
 
-if ( ! function_exists( '_s_entry_footer' ) ) :
+if ( ! function_exists( '_s_entry_footer' ) ) {
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
@@ -59,17 +53,17 @@ if ( ! function_exists( '_s_entry_footer' ) ) :
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', '_s' ) );
-			if ( $categories_list ) {
+			$_s_categories_list = get_the_category_list( esc_html__( ', ', '_s' ) );
+			if ( $_s_categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', '_s' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', '_s' ) . '</span>', $_s_categories_list ); 
 			}
 
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', '_s' ) );
-			if ( $tags_list ) {
+			$_s_tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', '_s' ) );
+			if ( $_s_tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', '_s' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', '_s' ) . '</span>', $_s_tags_list ); 
 			}
 		}
 
@@ -109,9 +103,7 @@ if ( ! function_exists( '_s_entry_footer' ) ) :
 			'</span>'
 		);
 	}
-endif;
-
-
+}
 
 /**
  *
@@ -122,7 +114,7 @@ endif;
  * See 404.php for where it is used. 
  */
 
-if ( ! function_exists( '_s_404_page' ) ) :
+if ( ! function_exists( '_s_404_page' ) ) {
 
 function _s_404_page() { 
 	
@@ -132,33 +124,33 @@ function _s_404_page() {
 
 	<article class="error-404 not-found">
 		<header class="page-header">
-			<?php if (  $_s_404_headline ) : 
+			<?php if ( !empty( $_s_404_headline ) ) { 
 					
 				echo '<h1 class="page-title">', esc_html(  $_s_404_headline ) . '</h1>';
 
-			else :
+			} else {
 
 				echo '<h1 class="page-title">' . esc_html__( 'Not found', '_s' ) .'</h1>';
 
-			endif; ?>
+			} ?>
 		</header><!-- .page-header -->
 
 		<section class="page-content">
-			<?php if ( $_s_404_subheadline ) : 
+			<?php if ( !empty( $_s_404_subheadline ) ) { 
 					
 				echo '<h2>' . esc_html( $_s_404_subheadline ) . '</h2>';
 
-			endif;
+			}
 
-			if ( $_s_404_message ) :
+			if ( !empty( $_s_404_message ) ) {
 					
 				echo '<p>' . esc_html( $_s_404_message ) . '</p>';
 
-			else : 
+			} else { 
 
 				echo '<p>' . esc_html__( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', '_s' ) . '</p>';
 
-			endif; 
+			} 
 
 			get_search_form(); ?>
 		</section><!-- .page-content -->
@@ -169,7 +161,7 @@ function _s_404_page() {
 	</aside><!-- #secondary -->
 
 <?php } // 404 function
-endif; // function exists
+} // function exists
 
 /**
  *
@@ -178,7 +170,7 @@ endif; // function exists
  * For the no results search page. Content is editable via the Customizer panel, with fallback content if client does not edit it.
  */
 
-if ( ! function_exists( '_s_search_page' ) ) :
+if ( ! function_exists( '_s_search_page' ) ) {
 
 function _s_search_page() { 
 	
@@ -187,34 +179,34 @@ function _s_search_page() {
 
 	<article class="error-404 not-found">
 		<header class="page-header">
-			<?php if ( $_s_search_page_headline ) : 
+			<?php if ( !empty( $_s_search_page_headline ) ) { 
 					
 				echo '<h1 class="page-title">' . esc_html( $_s_search_page_headline ) . '</h1>';
 
-			else :
+			} else {
 
 				echo '<h1 class="page-title">' . esc_html__( 'Not found', '_s' ) . '</h1>';
 
-			endif; ?>
+			} ?>
 		</header><!-- .page-header -->
 
 		<section class="page-content">
-			<?php if ( $_s_search_page_message ) :
+			<?php if ( !empty( $_s_search_page_message ) ) {
 					
 				echo '<p>' . esc_html( $_s_search_page_message ) . '</p>';
 
-			else : 
+			} else { 
 
 				echo '<p>' . esc_html__( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help?', '_s' ) . '</p>';
 
-			endif; 
+			} 
 
 			get_search_form(); ?>
 		</section><!-- .page-content -->
 	</article><!-- .error-404 -->
 
 <?php } // 404 function
-endif; // function exists
+} // function exists
 
 
 /**
@@ -227,25 +219,25 @@ endif; // function exists
  *
  */
 
-if ( ! function_exists( '_s_search_results_message' ) ) :
+if ( ! function_exists( '_s_search_results_message' ) ) {
 
 function _s_search_results_message() { 
 	
 	global $wp_query;
 	$_s_search_results = $wp_query->found_posts; 
 
-	if ( $_s_search_results <= 1 ) :
+	if ( !empty( $_s_search_results <= 1 ) ) {
 
 		echo esc_html( $_s_search_results ) . esc_html__(' Search result for &ldquo;', '_s') .  get_search_query() . '&rdquo;';
 
-	elseif ( $_s_search_results > 1 ) :
+	} elseif ( !empty( $_s_search_results > 1 ) ) {
 
 		echo esc_html( $_s_search_results ) . esc_html__(' Search results for &ldquo;', '_s') .  get_search_query() . '&rdquo;';
 
-	endif;
+	}
 
  } // pillarlife_search_results_message function
-endif; // function exists
+} // function exists
 
 /**
  *
@@ -253,7 +245,7 @@ endif; // function exists
  *
  */
 
-if ( ! function_exists( '_s_social_media_links' ) ) :
+if ( ! function_exists( '_s_social_media_links' ) ) {
 
 function _s_social_media_links() { 
 
@@ -271,38 +263,38 @@ function _s_social_media_links() {
 
 	 echo '<ul class="social-links">';
 
-		if ( $_s_social_media_profile_facebook ) :
+		if ( !empty( $_s_social_media_profile_facebook ) ) {
 			
 			echo '<li><a href="' . esc_url( $_s_social_media_profile_facebook )  . '">' . esc_html__('Facebook', '_s') . '</a>';
 
-		endif;
+		}
 
-		if ( $_s_social_media_profile_instagram ) :
+		if ( !empty( $_s_social_media_profile_instagram ) ) {
 			
 			echo '<li><a href="' . esc_url( $_s_social_media_profile_instagram_url ) . '">' . esc_html__('Instagram', '_s') . '</a>';
 
-		endif;
+		}
 
-		if ( $_s_social_media_profile_linkedin ) :
+		if ( !empty( $_s_social_media_profile_linkedin ) ) {
 			
 			echo '<li><a href="' . esc_url( $_s_social_media_profile_linkedin )  . '">' . esc_html__('LinkedIn', '_s') . '</a>';
 
-		endif;
+		}
 
-		if ( $_s_social_media_profile_pinterest ) :
+		if ( !empty( $_s_social_media_profile_pinterest ) ) {
 			
 			echo '<li><a href="' . esc_url( $_s_social_media_profile_pinterest )  . '">' . esc_html__('Pinterest', '_s') . '</a>';
 
-		endif;
+		}
 
-		if ( $_s_social_media_profile_twitter ) :
+		if ( !empty( $_s_social_media_profile_twitter ) ) {
 			
 			echo '<li><a href="' . esc_url( $_s_social_media_profile_twitter_url ) . '">' . esc_html__('Twitter', '_s') . '</a>';
 
-		endif;
+		}
 
 	echo '</ul>';
 
 } // social links
 
-endif; // function exists
+} // function exists
