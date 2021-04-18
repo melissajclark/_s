@@ -41,6 +41,16 @@ function _s_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
+	// add_image_size( '_s_image_square', 750, 750, array( 'left', 'top' ) );
+
+	// Register the three useful image sizes for use in Add Media modal
+	// add_filter( 'image_size_names_choose', '_s_custom_image_sizes' );
+
+	// function _s_custom_image_sizes( $sizes ) {
+	// 	return array_merge( $sizes, array(
+	// 		'_s_image_square' 		=> __( 'Large Square - 750px' ),
+	// 	) );
+	// }
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
