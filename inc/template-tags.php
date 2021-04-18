@@ -158,7 +158,9 @@ function _s_404_page() {
 
 				echo '<p>' . esc_html__( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', '_s' ) . '</p>';
 
-			endif; ?>
+			endif; 
+
+			get_search_form(); ?>
 		</section><!-- .page-content -->
 	</article><!-- .error-404 -->
 
@@ -205,7 +207,9 @@ function _s_search_page() {
 
 				echo '<p>' . esc_html__( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help?', '_s' ) . '</p>';
 
-			endif; ?>
+			endif; 
+
+			get_search_form(); ?>
 		</section><!-- .page-content -->
 	</article><!-- .error-404 -->
 
