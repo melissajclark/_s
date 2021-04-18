@@ -1,0 +1,79 @@
+
+// body class
+._s-custom-site .gform_wrapper {
+    margin:0;
+  
+    .top_label div.ginput_container {
+        margin-top:0;
+    }
+    
+    // custom classes added in extras.php
+    .gravity-input-small {
+    
+    }
+    
+    .gravity-input-large {
+    
+    }
+
+    input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]),
+    select,
+    textarea {
+        padding:var(--s-space-s);
+        width:100%;
+    }
+
+    .gform_footer {
+        margin:0;
+        padding:0;
+    }      
+    
+    // reset font sizes
+    label.gfield_label, 
+    legend.gfield_label,
+    .description, 
+    .gfield_description, 
+    .gsection_description, 
+    .instruction,
+    .validation_error,
+    .field_sublabel_above .ginput_complex.ginput_container label,
+    .field_sublabel_above div[class*="gfield_date_"].ginput_container label, 
+    .field_sublabel_above div[class*="gfield_time_"].ginput_container label, 
+    .field_sublabel_below .ginput_complex.ginput_container label, 
+    .field_sublabel_below div[class*="gfield_date_"].ginput_container label, 
+    .field_sublabel_below div[class*="gfield_time_"].ginput_container label {
+        font-size:var(--s-body-size);
+        line-height:var(--s-body-line-height);
+    }
+
+    // error messages
+    li.gfield_error input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]), 
+    li.gfield_error textarea {
+        border:2px dotted var(--s-black);
+    }
+
+    li.gfield.gfield_error, 
+    li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning,
+    .validation_error {
+        border-color:var(--s-black);
+        color:var(--s-black);
+    }
+
+    li.gfield.gfield_error, 
+    li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+        background-color:var(--s-grey);
+        color:var(--s-black);
+    }
+
+   .validation_message,
+    .gfield_error .gfield_label {
+        color:var(--s-black);
+    }
+
+    @media (max-width: 641px){
+        input:not([type="radio"]):not([type="checkbox"]):not([type="image"]):not([type="file"]) {
+            padding:var(--s-space-s);
+            line-height:var(--s-body-line-height);
+        }
+    }
+} // body class

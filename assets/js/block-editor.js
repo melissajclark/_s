@@ -1,6 +1,7 @@
 wp.domReady( () => {
 	
 	// remove unecessary block options
+	// see full list: https://www.billerickson.net/block-styles-in-gutenberg/#block-names
 	// ------------------------------
 
 	// buttons

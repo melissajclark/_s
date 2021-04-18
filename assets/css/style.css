@@ -151,10 +151,13 @@ body {
   width: 100vw;
 }
 
-.site-container {
+.s-container,
+.entry-content {
   max-width: var(--s-container);
   margin-left: auto;
   margin-right: auto;
+  padding-left: var(--s-space);
+  padding-right: var(--s-space);
 }
 
 /*--------------------------------------------------------------
@@ -165,26 +168,6 @@ body {
   color: var(--s-black);
   text-decoration: underline;
   transition: 0.25s;
-}
-
-button {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  font-family: var(--s-font-main);
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid var(--s-black);
-  padding: var(--s-space-s);
-}
-
-input {
-  display: block;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  padding: var(--s-space-s);
-  background-color: transparent;
 }
 
 .site-content ol,
@@ -227,6 +210,122 @@ input {
 .site-content ol ol ol,
 .block-editor-writing-flow ol ol ol {
   list-style-type: lower-roman;
+}
+
+button,
+[type="submit"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  font-family: var(--s-font-main);
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid var(--s-black);
+  padding: var(--s-space-s);
+}
+
+button:hover,
+[type="submit"]:hover {
+  background-color: var(--s-black);
+  color: var(--s-white);
+}
+
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
+select,
+textarea {
+  display: block;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: var(--s-space-s);
+  box-shadow: none;
+  background-color: transparent;
+  border: 1px solid var(--s-black);
+}
+
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="text"]:focus,
+input[type="url"]:focus,
+select:focus,
+textarea:focus {
+  background-color: var(--s-grey);
+}
+
+:focus {
+  outline: 2px dotted var(--s-black);
+}
+
+._s-custom-site .gform_wrapper {
+  margin: 0;
+}
+
+._s-custom-site .gform_wrapper .top_label div.ginput_container {
+  margin-top: 0;
+}
+
+._s-custom-site .gform_wrapper input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]),
+._s-custom-site .gform_wrapper select,
+._s-custom-site .gform_wrapper textarea {
+  padding: var(--s-space-s);
+  width: 100%;
+}
+
+._s-custom-site .gform_wrapper .gform_footer {
+  margin: 0;
+  padding: 0;
+}
+
+._s-custom-site .gform_wrapper label.gfield_label,
+._s-custom-site .gform_wrapper legend.gfield_label,
+._s-custom-site .gform_wrapper .description,
+._s-custom-site .gform_wrapper .gfield_description,
+._s-custom-site .gform_wrapper .gsection_description,
+._s-custom-site .gform_wrapper .instruction,
+._s-custom-site .gform_wrapper .validation_error,
+._s-custom-site .gform_wrapper .field_sublabel_above .ginput_complex.ginput_container label,
+._s-custom-site .gform_wrapper .field_sublabel_above div[class*="gfield_date_"].ginput_container label,
+._s-custom-site .gform_wrapper .field_sublabel_above div[class*="gfield_time_"].ginput_container label,
+._s-custom-site .gform_wrapper .field_sublabel_below .ginput_complex.ginput_container label,
+._s-custom-site .gform_wrapper .field_sublabel_below div[class*="gfield_date_"].ginput_container label,
+._s-custom-site .gform_wrapper .field_sublabel_below div[class*="gfield_time_"].ginput_container label {
+  font-size: var(--s-body-size);
+  line-height: var(--s-body-line-height);
+}
+
+._s-custom-site .gform_wrapper li.gfield_error input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]),
+._s-custom-site .gform_wrapper li.gfield_error textarea {
+  border: 2px dotted var(--s-black);
+}
+
+._s-custom-site .gform_wrapper li.gfield.gfield_error,
+._s-custom-site .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning,
+._s-custom-site .gform_wrapper .validation_error {
+  border-color: var(--s-black);
+  color: var(--s-black);
+}
+
+._s-custom-site .gform_wrapper li.gfield.gfield_error,
+._s-custom-site .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+  background-color: var(--s-grey);
+  color: var(--s-black);
+}
+
+._s-custom-site .gform_wrapper .validation_message,
+._s-custom-site .gform_wrapper .gfield_error .gfield_label {
+  color: var(--s-black);
+}
+
+@media (max-width: 641px) {
+  ._s-custom-site .gform_wrapper input:not([type="radio"]):not([type="checkbox"]):not([type="image"]):not([type="file"]) {
+    padding: var(--s-space-s);
+    line-height: var(--s-body-line-height);
+  }
 }
 
 /*--------------------------------------------------------------
@@ -286,6 +385,7 @@ h3,
 h4,
 h5,
 h6 {
+  font-weight: 600;
   margin-bottom: var(--s-space);
   line-height: var(--s-heading-line-height);
 }

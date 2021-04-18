@@ -6,8 +6,11 @@
     @include alignfull;
 }
 
-.site-container {
+.s-container,
+.entry-content {
     max-width:var(--s-container);
     margin-left:auto;
     margin-right:auto;
+    padding-left:var(--s-space);
+    padding-right:var(--s-space);
 }

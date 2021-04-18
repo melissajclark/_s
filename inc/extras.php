@@ -73,3 +73,75 @@ add_filter( 'login_headerurl', '_s_wp_login_url' );
 */
 
 add_filter( 'wpseo_metabox_prio', function() { return 'low';});
+
+
+/**
+ * Gravity Forms
+ * 
+ * Filters the next, previous and submit buttons.
+ * Replaces the forms <input> buttons with <button> while maintaining attributes from original <input>.
+ *
+ * @param string $button Contains the <input> tag to be filtered.
+ * @param object $form Contains all the properties of the current form.
+ *
+ * @return string The filtered button.
+ * 
+ * @link https://docs.gravityforms.com/gform_submit_button/
+ */
+add_filter( 'gform_next_button', 'afs_gravity_submit_input_to_button', 10, 2 );
+add_filter( 'gform_previous_button', 'afs_gravity_submit_input_to_button', 10, 2 );
+add_filter( 'gform_submit_button', 'afs_gravity_submit_input_to_button', 10, 2 );
+
+function afs_gravity_submit_input_to_button( $button, $form ) {
+    $dom = new DOMDocument();
+    $dom->loadHTML( '<?xml encoding="utf-8" ?>' . $button );
+    $input = $dom->getElementsByTagName( 'input' )->item(0);
+    $new_button = $dom->createElement( 'button' );
+    $new_button->appendChild( $dom->createTextNode( $input->getAttribute( 'value' ) ) );
+    $input->removeAttribute( 'value' );
+    foreach( $input->attributes as $attribute ) {
+        $new_button->setAttribute( $attribute->name, $attribute->value );
+    }
+    $input->parentNode->replaceChild( $new_button, $input );
+ 
+    return $dom->saveHtml( $new_button );
+}
+
+/**
+ *
+ * Filter Gravity Forms to add classes to inputs
+ *
+ * @link https://www.gravityhelp.com/documentation/article/gform_field_css_class/
+ */
+//  Possible fields: html, hidden, section, text, website, phone, number, date, time, textarea, select, checkbox, radio, name, address, fileupload, email, post_title, post_content, post_excerpt, post_tags, post_category, post_image, post_custom_field, captcha
+
+add_filter( 'gform_field_css_class', '_s_gform_single_inputs', 10, 3 );
+
+function _s_gform_single_inputs( $classes, $field, $form ) {
+    if ( $field->type == 'text' || 
+		$field->type == 'website' || 
+		$field->type == 'email' || 
+		$field->type == 'number' || 
+		$field->type == 'phone' || 
+		$field->type == 'date'|| 
+		$field->type == 'post_custom_field' ||
+		$field->type == 'post_title' || 
+		$field->type == 'select' || 
+		$field->type == 'username' || 
+		$field->type == 'time') {
+
+        $classes .= ' gravity-input-small';
+    }
+    return $classes;
+}
+
+add_filter( 'gform_field_css_class', '_s_gform_large_input', 10, 3 );
+
+function _s_gform_large_input( $classes, $field, $form ) {
+    if ( $field->type == 'address' || 
+		$field->type == 'textarea' || 
+		$field->type == 'password') {
+        $classes .= ' gravity-input-large';
+    }
+    return $classes;
+}

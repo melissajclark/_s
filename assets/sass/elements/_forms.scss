@@ -1,8 +1,23 @@
-
-input {
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
+select,
+textarea {
     display:block;
     appearance: none;
     padding:var(--s-space-s);
-    // box-shadow: none;
+    box-shadow: none;
     background-color: transparent;
+    border:1px solid var(--s-black);
+
+    &:focus {
+        background-color: var(--s-grey);
+    }
 }
+
+:focus {
+    outline:2px dotted var(--s-black);
+}
+
