@@ -1,0 +1,14 @@
+button {
+    appearance: none;
+    font-family: var(--s-font-main);
+    cursor: pointer;
+    background-color: transparent;
+    border:1px solid var(--s-black);
+    padding:var(--s-space-s);
+}
+
+.gform_wrapper .gform_button,
+a.button,
+.wp-block-button .wp-block-button__link {
+
+}

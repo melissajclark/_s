@@ -1,0 +1,68 @@
+body,
+button,
+input {
+    font-family:var(--s-font-main);
+    font-size:var(--s-body-size);
+    line-height: var(--s-body-line-height);
+}
+
+::selection {
+    // background-color:var(--s-purple);
+    // color:var(--s-white);
+}
+
+p{
+    margin-bottom:var( --s-space-medium);
+
+    &:empty {
+        margin-bottom:0;
+    }
+}
+
+em,
+i {
+    font-style:italic;
+}
+
+strong, 
+b {
+    font-weight:600;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom:var(--s-space);
+    line-height:var(--s-heading-line-height);
+
+    @include breakpoint(huge){
+        margin-bottom:(--s-space-large);
+    }
+}
+
+h1 {
+    font-size:var(--s-h1-size);
+}
+
+h2 {
+    font-size:var(--s-h2-size);
+}
+
+h3 {
+    font-size:var(--s-h3-size);
+}
+
+h4 {
+    font-size:var(--s-h4-size);
+}
+
+h5 {
+    font-size:var(--s-h5-size);
+}
+
+h6 {
+    font-size:var(--s-h6-size);
+}

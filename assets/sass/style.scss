@@ -1,0 +1,61 @@
+/*!
+Theme Name: _s
+Theme URI: TBD
+Author: Melissa Jean Clark, Inc.
+Author URI: https://melissajclark.ca/
+Description: Custom WordPress theme for ---, designed by <a href=\"---\">---</a>.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: _s
+Tags: block-styles, featured-images, editor-style, full-width-template, accessibility-ready, theme-options, footer-widgets, blog
+*/
+
+// http://meyerweb.com/eric/tools/css/reset/ 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body {
+	box-sizing: border-box;
+}
+
+// SASS utilities
+@import "utils/all";
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+@import "elements/all";
+
+/*--------------------------------------------------------------
+# Site
+--------------------------------------------------------------*/
+@import "site/all";
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+@import "navigation/all";
+
+/*--------------------------------------------------------------
+# Blocks
+--------------------------------------------------------------*/
+@import "blocks/all";

@@ -1,0 +1,38 @@
+.site-content,
+.block-editor-writing-flow {
+    ol,
+    ul {
+        list-style-position: outside;
+        padding-left:32px;
+        // margin-left:auto;
+
+        > li {
+            margin-bottom:12px;
+        }
+    } // lists
+
+    ul > li {
+        list-style-type: disc;
+    }
+
+    // bulleted lists
+    ul li::marker {
+        font-size:16px;
+    }
+
+    li ul,
+    li ol {
+        margin-top:var(--s-space);
+    }
+
+    // numbered
+    ol {
+        ol {
+            list-style-type:lower-alpha;
+
+            ol {
+                list-style-type: lower-roman;
+            }
+        }
+    }
+} // page

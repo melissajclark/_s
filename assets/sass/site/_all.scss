@@ -1,0 +1,27 @@
+// resets as needed
+img {
+    max-width:100%;
+    height:auto;
+}
+
+.entry-content > * {
+    scroll-margin-top:150px;
+}
+
+// sticky footer for browsers that support flexbox (only needed on larger screens)
+// https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
+@include breakpoint(little){
+    @supports (display: flex) { 
+        .site {
+            display:flex;
+            min-height:100vh; 
+            flex-direction:column;
+        }
+        
+        .site-content {
+            flex:1;
+        }
+    }
+}
+
+@import "typography";

@@ -1,0 +1,7 @@
+// site content links
+.site-footer a,
+.site-content a {
+    color:var(--s-black);
+    text-decoration: underline;
+    transition:0.25s;
+}

@@ -1,0 +1,76 @@
+:root {
+    // colours
+    --s-white: #FFFFFF;
+    --s-black: #000000;
+    --s-grey: #EAEAEA;
+
+    // font setup
+    --s-font-main : sans-serif;
+
+    // typography
+    --s-body-size: 18px;
+    --s-tiny-text: 12px;
+    --s-small-text: 13px;
+    --s-medium-text: 15px;
+
+    --s-h1-size : 20px;
+    --s-h2-size : 24px;
+    --s-h3-size : 22px;
+    --s-h4-size : 20px;
+    --s-h5-size : 18px;
+    --s-h6-size : 18px;
+
+    --s-body-line-height: 1.666666667;
+    --s-heading-line-height: 1.2;
+    --s-container: 100vw;
+
+    @include breakpoint(tiny){
+        --s-h1-size : 34px;
+        --s-h2-size : 28px;
+        --s-h3-size : 22px;
+        --s-h4-size : 22px;
+        --s-h5-size : 20px;
+    }
+    
+    @include breakpoint(medium){
+        --s-container: 91vw;
+        --s-h1-size : 52px;
+        --s-h2-size : 32px;
+        --s-h3-size : 24px;
+    }
+
+    @include breakpoint(huge){
+        --s-tiny-text: 13px;
+        --s-small-text: 14px;
+        --s-medium-text: 16px;
+        --s-body-size: 20px;
+        --s-h1-size : 58px;
+        --s-h2-size : 36px;
+        --s-h3-size : 27px;
+        --s-h4-size : 24px;
+        --s-h5-size : 22px;
+        --s-h6-size : 20px;
+    }
+
+    @include breakpoint(giant){
+        --s-container:85vw;
+    }
+
+    @media (min-width: 2200px) {
+        --s-container:75vw;
+    }
+    
+    @media (min-width: 2500px) {
+        --s-container:65vw;
+    }
+
+    // spacing
+    --s-space-mobile :   9.6%;
+    --s-space-xs :   4px;
+    --s-space-s :   8px;
+    --s-space :   16px;
+    --s-space-medium : 24px;
+    --s-space-large : 32px;
+    --s-space-xl : 64px;
+    --s-space-xxl : 84px;
+}
